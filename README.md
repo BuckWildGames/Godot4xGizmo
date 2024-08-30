@@ -43,9 +43,9 @@ For physics nodes such as RigidBody3D and CharacterBody3D collision detection ca
 ![Desktop Screenshot 2024 08 30 - 14 54 57 95](https://github.com/user-attachments/assets/4b917fd4-f1d1-4f91-8826-a719b08dd15a)
 ![Desktop Screenshot 2024 08 30 - 15 39 24 74](https://github.com/user-attachments/assets/ad33b7a2-d205-4457-a14b-d18608ed82ef)
 
-To install, simply drop the gizmo addon folder into your project addons folder. (If it doesn't exist, create it.)
+To install, simply unzip the file (gizmo.zip) and drop the gizmo folder into your project addons folder. (If it doesn't exist, create it.)
 
-You can also use the sample project to explore the features and learn how to implement it into your project.
+You can also use the sample project (gizmo-example.zip) to explore the features and learn how to implement it into your project.
 
 Enjoy!
 
