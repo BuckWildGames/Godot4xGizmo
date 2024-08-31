@@ -13,7 +13,9 @@ The GizmoController node should be added as a child of the active Camera3D node.
 
 The GizmoReceiver node should be added as a child of any object you wish to move.
 
-Both nodes each have one function that can be directly called or called using a signal.
+The GizmoController node has one function that can be directly called or called using a signal.
+
+The GizmoReceiver node has two functions that can be directly called or called using a signal.
 
 (*Any other function should not be called outside of the existing calls.)
 
