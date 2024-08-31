@@ -21,13 +21,13 @@ The GizmoReceiver node has two functions that can be directly called or called u
 
 All scripts include comments for anyone that wants to try to understand or modify them.
 
-![Desktop Screenshot 2024 08 30 - 14 53 49 02](https://github.com/user-attachments/assets/f5ff6308-29e4-43ae-ad23-cb8856ebe119)![Desktop Screenshot 2024 08 30 - 14 54 02 67](https://github.com/user-attachments/assets/4b528cc7-900d-4b4f-ac05-f30aad3400be)
+![Desktop Screenshot 2024 08 30 - 14 53 49 02](https://github.com/user-attachments/assets/f5ff6308-29e4-43ae-ad23-cb8856ebe119)![Desktop Screenshot 2024 08 31 - 12 45 29 60](https://github.com/user-attachments/assets/414c2961-d2de-4401-9adb-324cd05beb38)
 
 There is many different options that can be set in the inspector to customize or tailor the gizmo to work with your project.
 
 Every option in the inspector has a description and should be easy to understand the function.
 
-The GizmoController options are the default options and some overlapping options in the GizmoReceiver will overwrite the default.
+The GizmoController options are the default options and some overlapping options in the GizmoReceiver can overwrite the default.
 
 (If the gizmo or axis is disabled in the GizmoController, the GizmoReceiver will not overwrite it.)
 
