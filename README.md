@@ -5,6 +5,8 @@ A simple to use but complex and powerful gizmo tool to add to any Godot 4x proje
 
 I had been looking for a gizmo tool that was flexable, easy to use and functioned well, but could not find what I was looking for, thats what made me decide to create this tool.
 
+# Info:
+
 ![Desktop Screenshot 2024 08 30 - 15 08 17 18](https://github.com/user-attachments/assets/e0e912c1-df10-40ce-8484-d113ad19955a)
 
 There is two nodes included with the addon, GizmoController and GizmoReceiver.
@@ -50,6 +52,12 @@ To install, simply unzip the file (gizmo.zip) and drop the gizmo folder into you
 You can also use the sample project (gizmo-example.zip) to explore the features and learn how to implement it into your project.
 
 Enjoy!
+
+# Credit:
+
+Made by BuckWildGames
+
+# Links:
 
 GitHub: https://github.com/BuckWildGames
 
