@@ -1,0 +1,349 @@
+[gd_scene load_steps=31 format=3 uid="uid://cg0fkrspjwcxm"]
+
+[ext_resource type="Script" path="res://addons/gizmo/gizmo.gd" id="1_1spsu"]
+[ext_resource type="Script" path="res://addons/gizmo/gizmo_buttons.gd" id="2_84xk2"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_qlinu"]
+radius = 0.1
+height = 0.2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xknnb"]
+transparency = 1
+albedo_color = Color(0.567439, 0.547714, 0, 0.603922)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_fgmc3"]
+radius = 0.01
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wctbk"]
+transparency = 1
+albedo_color = Color(1, 0.117647, 0.0196078, 0.603922)
+
+[sub_resource type="PrismMesh" id="PrismMesh_nwfhm"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_cpgyn"]
+radius = 0.02
+height = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3hop"]
+transparency = 1
+albedo_color = Color(0, 0.882353, 0, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1v5l5"]
+transparency = 1
+albedo_color = Color(0, 0.882353, 0, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_opqgh"]
+transparency = 1
+albedo_color = Color(0.0701478, 0.30795, 0.999995, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gujr6"]
+transparency = 1
+albedo_color = Color(0.0701478, 0.30795, 0.999995, 0.603922)
+
+[sub_resource type="TorusMesh" id="TorusMesh_g5u0v"]
+inner_radius = 0.08
+outer_radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e7uxx"]
+transparency = 1
+albedo_color = Color(1, 0.117647, 0.0196078, 0.603922)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_ay8jm"]
+height = 0.02
+radius = 0.1
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tjqrh"]
+transparency = 1
+albedo_color = Color(0, 0.882353, 0, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4uhfx"]
+transparency = 1
+albedo_color = Color(0.0701478, 0.30795, 0.999995, 0.603922)
+
+[sub_resource type="BoxMesh" id="BoxMesh_clvr5"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xmiyw"]
+transparency = 1
+albedo_color = Color(1, 0.117647, 0.0196078, 0.603922)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yqu6g"]
+size = Vector3(0.05, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oc72m"]
+transparency = 1
+albedo_color = Color(0, 0.882353, 0, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_urty1"]
+transparency = 1
+albedo_color = Color(0.0701478, 0.30795, 0.999995, 0.603922)
+
+[sub_resource type="PrismMesh" id="PrismMesh_olroa"]
+size = Vector3(0.07, 0.035, 0.01)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_f1kfo"]
+transparency = 1
+albedo_color = Color(1, 0.117647, 0.0196078, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qge5i"]
+transparency = 1
+albedo_color = Color(0, 0.882353, 0, 0.603922)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lhl8k"]
+size = Vector3(0.01, 0.05, 0.05)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_go1r3"]
+transparency = 1
+albedo_color = Color(0, 0.882353, 0, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8p42p"]
+transparency = 1
+albedo_color = Color(0.0701478, 0.30795, 0.999995, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ywmxn"]
+transparency = 1
+albedo_color = Color(0.0701478, 0.30795, 0.999995, 0.603922)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5sh0o"]
+transparency = 1
+albedo_color = Color(1, 0.117647, 0.0196078, 0.603922)
+
+[node name="Gizmo" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+top_level = true
+script = ExtResource("1_1spsu")
+
+[node name="GizmoButtons" type="Node3D" parent="."]
+script = ExtResource("2_84xk2")
+
+[node name="Scaler" type="Node3D" parent="."]
+
+[node name="Center" type="Node3D" parent="Scaler"]
+
+[node name="Ball" type="MeshInstance3D" parent="Scaler/Center"]
+mesh = SubResource("SphereMesh_qlinu")
+surface_material_override/0 = SubResource("StandardMaterial3D_xknnb")
+
+[node name="Positions" type="Node3D" parent="Scaler"]
+
+[node name="X" type="Area3D" parent="Scaler/Positions"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.25, 0, 0)
+monitoring = false
+monitorable = false
+
+[node name="Arm" type="MeshInstance3D" parent="Scaler/Positions/X"]
+mesh = SubResource("CapsuleMesh_fgmc3")
+surface_material_override/0 = SubResource("StandardMaterial3D_wctbk")
+
+[node name="Arrow" type="MeshInstance3D" parent="Scaler/Positions/X"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.25, 0)
+mesh = SubResource("PrismMesh_nwfhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_wctbk")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Positions/X"]
+shape = SubResource("CapsuleShape3D_cpgyn")
+
+[node name="Y" type="Area3D" parent="Scaler/Positions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+monitoring = false
+monitorable = false
+
+[node name="Arm" type="MeshInstance3D" parent="Scaler/Positions/Y"]
+mesh = SubResource("CapsuleMesh_fgmc3")
+surface_material_override/0 = SubResource("StandardMaterial3D_q3hop")
+
+[node name="Arrow" type="MeshInstance3D" parent="Scaler/Positions/Y"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.25, 0)
+mesh = SubResource("PrismMesh_nwfhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_1v5l5")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Positions/Y"]
+shape = SubResource("CapsuleShape3D_cpgyn")
+
+[node name="Z" type="Area3D" parent="Scaler/Positions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.25)
+monitoring = false
+monitorable = false
+
+[node name="Arm" type="MeshInstance3D" parent="Scaler/Positions/Z"]
+mesh = SubResource("CapsuleMesh_fgmc3")
+surface_material_override/0 = SubResource("StandardMaterial3D_opqgh")
+
+[node name="Arrow" type="MeshInstance3D" parent="Scaler/Positions/Z"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.25, 0)
+mesh = SubResource("PrismMesh_nwfhm")
+surface_material_override/0 = SubResource("StandardMaterial3D_gujr6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Positions/Z"]
+shape = SubResource("CapsuleShape3D_cpgyn")
+
+[node name="Rotations" type="Node3D" parent="Scaler"]
+
+[node name="X" type="Area3D" parent="Scaler/Rotations"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0.55, 0, 0)
+monitoring = false
+monitorable = false
+
+[node name="Ring" type="MeshInstance3D" parent="Scaler/Rotations/X"]
+mesh = SubResource("TorusMesh_g5u0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_e7uxx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Rotations/X"]
+shape = SubResource("CylinderShape3D_ay8jm")
+
+[node name="Y" type="Area3D" parent="Scaler/Rotations"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.55, 0)
+monitoring = false
+monitorable = false
+
+[node name="Ring" type="MeshInstance3D" parent="Scaler/Rotations/Y"]
+mesh = SubResource("TorusMesh_g5u0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_tjqrh")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Rotations/Y"]
+shape = SubResource("CylinderShape3D_ay8jm")
+
+[node name="Z" type="Area3D" parent="Scaler/Rotations"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 0, 0.55)
+monitoring = false
+monitorable = false
+
+[node name="Ring" type="MeshInstance3D" parent="Scaler/Rotations/Z"]
+mesh = SubResource("TorusMesh_g5u0v")
+surface_material_override/0 = SubResource("StandardMaterial3D_4uhfx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Rotations/Z"]
+shape = SubResource("CylinderShape3D_ay8jm")
+
+[node name="Scales" type="Node3D" parent="Scaler"]
+
+[node name="X" type="Area3D" parent="Scaler/Scales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6, 0, 0)
+monitoring = false
+monitorable = false
+
+[node name="Cube" type="MeshInstance3D" parent="Scaler/Scales/X"]
+mesh = SubResource("BoxMesh_clvr5")
+surface_material_override/0 = SubResource("StandardMaterial3D_xmiyw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Scales/X"]
+shape = SubResource("BoxShape3D_yqu6g")
+
+[node name="Y" type="Area3D" parent="Scaler/Scales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+monitoring = false
+monitorable = false
+
+[node name="Cube" type="MeshInstance3D" parent="Scaler/Scales/Y"]
+mesh = SubResource("BoxMesh_clvr5")
+surface_material_override/0 = SubResource("StandardMaterial3D_oc72m")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Scales/Y"]
+shape = SubResource("BoxShape3D_yqu6g")
+
+[node name="Z" type="Area3D" parent="Scaler/Scales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.6)
+monitoring = false
+monitorable = false
+
+[node name="Cube" type="MeshInstance3D" parent="Scaler/Scales/Z"]
+mesh = SubResource("BoxMesh_clvr5")
+surface_material_override/0 = SubResource("StandardMaterial3D_urty1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/Scales/Z"]
+shape = SubResource("BoxShape3D_yqu6g")
+
+[node name="MultiPositions" type="Node3D" parent="Scaler"]
+
+[node name="XY" type="Area3D" parent="Scaler/MultiPositions"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.2, 0.2, 0)
+monitoring = false
+monitorable = false
+
+[node name="XPiece" type="MeshInstance3D" parent="Scaler/MultiPositions/XY"]
+transform = Transform3D(3.09086e-08, 3.09086e-08, 1, 0.707107, -0.707107, 0, 0.707107, 0.707107, -4.37114e-08, 0, -0.012, 0.012)
+mesh = SubResource("PrismMesh_olroa")
+surface_material_override/0 = SubResource("StandardMaterial3D_f1kfo")
+
+[node name="YPiece" type="MeshInstance3D" parent="Scaler/MultiPositions/XY"]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 1, -0.707107, 0.707107, 0, -0.707107, -0.707107, -4.37114e-08, 0, 0.012, -0.012)
+mesh = SubResource("PrismMesh_olroa")
+surface_material_override/0 = SubResource("StandardMaterial3D_qge5i")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/MultiPositions/XY"]
+shape = SubResource("BoxShape3D_lhl8k")
+
+[node name="YZ" type="Area3D" parent="Scaler/MultiPositions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.2, 0.2)
+monitoring = false
+monitorable = false
+
+[node name="YPiece" type="MeshInstance3D" parent="Scaler/MultiPositions/YZ"]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 1, -0.707107, 0.707107, 0, -0.707107, -0.707107, -4.37114e-08, 0, 0.012, -0.012)
+mesh = SubResource("PrismMesh_olroa")
+surface_material_override/0 = SubResource("StandardMaterial3D_go1r3")
+
+[node name="ZPiece" type="MeshInstance3D" parent="Scaler/MultiPositions/YZ"]
+transform = Transform3D(3.09086e-08, 3.09086e-08, 1, 0.707107, -0.707107, 0, 0.707107, 0.707107, -4.37114e-08, 0, -0.012, 0.012)
+mesh = SubResource("PrismMesh_olroa")
+surface_material_override/0 = SubResource("StandardMaterial3D_8p42p")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/MultiPositions/YZ"]
+shape = SubResource("BoxShape3D_lhl8k")
+
+[node name="ZX" type="Area3D" parent="Scaler/MultiPositions"]
+transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0.2, 0, 0.2)
+monitoring = false
+monitorable = false
+
+[node name="ZPiece" type="MeshInstance3D" parent="Scaler/MultiPositions/ZX"]
+transform = Transform3D(3.09086e-08, 3.09086e-08, 1, 0.707107, -0.707107, 0, 0.707107, 0.707107, -4.37114e-08, 0, -0.012, 0.012)
+mesh = SubResource("PrismMesh_olroa")
+surface_material_override/0 = SubResource("StandardMaterial3D_ywmxn")
+
+[node name="XPiece" type="MeshInstance3D" parent="Scaler/MultiPositions/ZX"]
+transform = Transform3D(-3.09086e-08, -3.09086e-08, 1, -0.707107, 0.707107, 0, -0.707107, -0.707107, -4.37114e-08, 0, 0.012, -0.012)
+mesh = SubResource("PrismMesh_olroa")
+surface_material_override/0 = SubResource("StandardMaterial3D_5sh0o")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Scaler/MultiPositions/ZX"]
+shape = SubResource("BoxShape3D_lhl8k")
+
+[connection signal="input_event" from="Scaler/Positions/X" to="GizmoButtons" method="_on_x_input_event"]
+[connection signal="mouse_entered" from="Scaler/Positions/X" to="GizmoButtons" method="_on_x_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Positions/X" to="GizmoButtons" method="_on_x_mouse_exited"]
+[connection signal="input_event" from="Scaler/Positions/Y" to="GizmoButtons" method="_on_y_input_event"]
+[connection signal="mouse_entered" from="Scaler/Positions/Y" to="GizmoButtons" method="_on_y_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Positions/Y" to="GizmoButtons" method="_on_y_mouse_exited"]
+[connection signal="input_event" from="Scaler/Positions/Z" to="GizmoButtons" method="_on_z_input_event"]
+[connection signal="mouse_entered" from="Scaler/Positions/Z" to="GizmoButtons" method="_on_z_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Positions/Z" to="GizmoButtons" method="_on_z_mouse_exited"]
+[connection signal="input_event" from="Scaler/Rotations/X" to="GizmoButtons" method="_on_rot_x_input_event"]
+[connection signal="mouse_entered" from="Scaler/Rotations/X" to="GizmoButtons" method="_on_rot_x_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Rotations/X" to="GizmoButtons" method="_on_rot_x_mouse_exited"]
+[connection signal="input_event" from="Scaler/Rotations/Y" to="GizmoButtons" method="_on_rot_y_input_event"]
+[connection signal="mouse_entered" from="Scaler/Rotations/Y" to="GizmoButtons" method="_on_rot_y_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Rotations/Y" to="GizmoButtons" method="_on_rot_y_mouse_exited"]
+[connection signal="input_event" from="Scaler/Rotations/Z" to="GizmoButtons" method="_on_rot_z_input_event"]
+[connection signal="mouse_entered" from="Scaler/Rotations/Z" to="GizmoButtons" method="_on_rot_z_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Rotations/Z" to="GizmoButtons" method="_on_rot_z_mouse_exited"]
+[connection signal="input_event" from="Scaler/Scales/X" to="GizmoButtons" method="_on_scl_x_input_event"]
+[connection signal="mouse_entered" from="Scaler/Scales/X" to="GizmoButtons" method="_on_scl_x_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Scales/X" to="GizmoButtons" method="_on_scl_x_mouse_exited"]
+[connection signal="input_event" from="Scaler/Scales/Y" to="GizmoButtons" method="_on_scl_y_input_event"]
+[connection signal="mouse_entered" from="Scaler/Scales/Y" to="GizmoButtons" method="_on_scl_y_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Scales/Y" to="GizmoButtons" method="_on_scl_y_mouse_exited"]
+[connection signal="input_event" from="Scaler/Scales/Z" to="GizmoButtons" method="_on_scl_z_input_event"]
+[connection signal="mouse_entered" from="Scaler/Scales/Z" to="GizmoButtons" method="_on_scl_z_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/Scales/Z" to="GizmoButtons" method="_on_scl_z_mouse_exited"]
+[connection signal="input_event" from="Scaler/MultiPositions/XY" to="GizmoButtons" method="_on_xy_input_event"]
+[connection signal="mouse_entered" from="Scaler/MultiPositions/XY" to="GizmoButtons" method="_on_xy_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/MultiPositions/XY" to="GizmoButtons" method="_on_xy_mouse_exited"]
+[connection signal="input_event" from="Scaler/MultiPositions/YZ" to="GizmoButtons" method="_on_yz_input_event"]
+[connection signal="mouse_entered" from="Scaler/MultiPositions/YZ" to="GizmoButtons" method="_on_yz_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/MultiPositions/YZ" to="GizmoButtons" method="_on_yz_mouse_exited"]
+[connection signal="input_event" from="Scaler/MultiPositions/ZX" to="GizmoButtons" method="_on_zx_input_event"]
+[connection signal="mouse_entered" from="Scaler/MultiPositions/ZX" to="GizmoButtons" method="_on_zx_mouse_entered"]
+[connection signal="mouse_exited" from="Scaler/MultiPositions/ZX" to="GizmoButtons" method="_on_zx_mouse_exited"]

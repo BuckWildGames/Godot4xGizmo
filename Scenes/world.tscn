@@ -1,0 +1,291 @@
+[gd_scene load_steps=21 format=3 uid="uid://bjncwp7x23apw"]
+
+[ext_resource type="Script" path="res://addons/gizmo/receiver.gd" id="1_eq3f7"]
+[ext_resource type="Script" path="res://Scripts/free_cam.gd" id="2_qdeu1"]
+[ext_resource type="Script" path="res://addons/gizmo/controller.gd" id="3_iqrod"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_dppit"]
+size = Vector2(50, 50)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cjn4h"]
+albedo_color = Color(0.43134, 0.43134, 0.43134, 1)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_jbme5"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_3nc1o"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ci38n"]
+albedo_color = Color(0.603512, 0.387024, 0.926361, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_enby5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c3hng"]
+albedo_color = Color(0.823999, 0.380531, 0.156384, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kmvu8"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cgehx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_58gxs"]
+albedo_color = Color(4.81307e-07, 0.60631, 0.606396, 1)
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lwvkn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_b5a7u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_udce1"]
+albedo_color = Color(0.353008, 0.608704, 0.138188, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0celq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_f64po"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6rnet"]
+albedo_color = Color(0.897696, 0.27484, 0.293157, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_pln0f"]
+
+[node name="World" type="Node3D"]
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("PlaneMesh_dppit")
+surface_material_override/0 = SubResource("StandardMaterial3D_cjn4h")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("WorldBoundaryShape3D_jbme5")
+
+[node name="Objects" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Node3D"]
+mesh = SubResource("PrismMesh_3nc1o")
+surface_material_override/0 = SubResource("StandardMaterial3D_ci38n")
+
+[node name="Label3D" type="Label3D" parent="Objects/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "Node3D"
+font_size = 48
+
+[node name="GizmoReceiver" type="Node3D" parent="Objects/Node3D"]
+script = ExtResource("1_eq3f7")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/StaticBody3D"]
+mesh = SubResource("CylinderMesh_enby5")
+surface_material_override/0 = SubResource("StandardMaterial3D_c3hng")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/StaticBody3D"]
+shape = SubResource("CylinderShape3D_kmvu8")
+
+[node name="Label3D" type="Label3D" parent="Objects/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "StaticBody3D"
+font_size = 48
+
+[node name="GizmoReceiver" type="Node3D" parent="Objects/StaticBody3D"]
+script = ExtResource("1_eq3f7")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_cgehx")
+surface_material_override/0 = SubResource("StandardMaterial3D_58gxs")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_lwvkn")
+
+[node name="Label3D" type="Label3D" parent="Objects/CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "CharacterBody3D"
+font_size = 48
+
+[node name="GizmoReceiver" type="Node3D" parent="Objects/CharacterBody3D"]
+script = ExtResource("1_eq3f7")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/RigidBody3D"]
+mesh = SubResource("BoxMesh_b5a7u")
+surface_material_override/0 = SubResource("StandardMaterial3D_udce1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/RigidBody3D"]
+shape = SubResource("BoxShape3D_0celq")
+
+[node name="Label3D" type="Label3D" parent="Objects/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "RigidBody3D"
+font_size = 48
+
+[node name="GizmoReceiver" type="Node3D" parent="Objects/RigidBody3D"]
+script = ExtResource("1_eq3f7")
+
+[node name="Area3D" type="Area3D" parent="Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10, 0.5, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Objects/Area3D"]
+mesh = SubResource("SphereMesh_f64po")
+surface_material_override/0 = SubResource("StandardMaterial3D_6rnet")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objects/Area3D"]
+shape = SubResource("SphereShape3D_pln0f")
+
+[node name="Label3D" type="Label3D" parent="Objects/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+text = "Area3D"
+font_size = 48
+
+[node name="GizmoReceiver" type="Node3D" parent="Objects/Area3D"]
+script = ExtResource("1_eq3f7")
+
+[node name="FreeCam" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.45295, 11.1622)
+
+[node name="Camera3D" type="Camera3D" parent="FreeCam"]
+current = true
+script = ExtResource("2_qdeu1")
+
+[node name="GizmoController" type="Node3D" parent="FreeCam/Camera3D"]
+script = ExtResource("3_iqrod")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 0)
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CanvasLayer" type="CanvasLayer" parent="UI"]
+
+[node name="PanelContainer" type="PanelContainer" parent="UI/CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/PanelContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Controls:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Left click to select object.
+WASD to move around. 
+Hold Right click to look around."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SpaceBar to move up.
+Control key to move down.
+Hold Shift to move faster."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="UI/CanvasLayer/PanelContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Press Escape
+to close or clear."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer2" type="PanelContainer" parent="UI/CanvasLayer"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -720.0
+offset_bottom = -560.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/CanvasLayer/PanelContainer2"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Info:"
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CharacterBody3D, RigidBody3D,
+StaticBody3D and Area3D
+can all receive input events to select."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator" type="VSeparator" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "CharacterBody3D and RigidBody3D
+can also have collision dectection
+active while moving."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+
+[node name="Label4" type="Label" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Node3D can only be
+selected using a script.
+(Press Enter to select)"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="UI/CanvasLayer/PanelContainer2/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "The inspector has many options for the GizmoReceiver node and the GizmoController node."
+horizontal_alignment = 1
+vertical_alignment = 1
